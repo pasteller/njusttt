@@ -1,5 +1,6 @@
 # NJUST-Thesis-Template
-A LaTeX thesis template for Nanjing University of Sci. & Tech. 
+A LaTeX thesis template for Nanjing University of Science & Technology
+
 南京理工大学学位论文Latex模板（硕博）
 
 由于现有的Latex模板年久失修，且不适配Overleaf等在线写作平台。本模板的希望能做到为广大校友提供一个新的写作方式的选择。
