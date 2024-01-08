@@ -3,7 +3,7 @@ A LaTeX thesis template for Nanjing University of Science & Technology
 
 南京理工大学学位论文Latex模板（硕博）
 
-由于现有的Latex模板年久失修，且不适配Overleaf等在线写作平台。本模板的希望能做到为广大校友提供一个新的写作方式的选择。
+由于现有的Latex模板年久失修，且不适配Overleaf等在线写作平台。本模板的希望能做到为广大校友提供一个写作方式新选择。
 由于作者能力有限，欢迎P/R。本模板会一直保持维护状态。
 
 ## 已测试编译环境：

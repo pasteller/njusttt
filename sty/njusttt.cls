@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
-\ProvidesClass{sty/njustthesis}[2023/03/03 v0.1 NJUSTthesis template class]
+\ProvidesClass{sty/njusttt}[2024/01/08 v0.1 NJUST thesis template class]
 
 
 
@@ -26,7 +26,7 @@
 
 
 %% load class configuretion
-\AtEndOfPackage{\makeatletter \InputIfFileExists{sty/njustthesis.cfg}{}{} \makeatother}
+\AtEndOfPackage{\makeatletter \InputIfFileExists{sty/njusttt.cfg}{}{} \makeatother}
 
 
 
@@ -464,4 +464,3 @@
 
 
 \endinput
-%% end of file `njustThesis.cls'.
