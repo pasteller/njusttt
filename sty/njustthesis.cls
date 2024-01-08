@@ -21,7 +21,7 @@
 
 
 %% loadclass infomation
-\LoadClass[a4paper,zihao=-4,UTF8,fontset=windows]{ctexbook}
+\LoadClass[a4paper,zihao=-4,UTF8]{ctexbook}
 
 
 %% package infomation
