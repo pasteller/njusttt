@@ -1,10 +1,3 @@
-%% This `njustthesis.cls' is the class file for NJUSTthesis template.
-%%
-%% GUN
-%% It may be distributed and/or modified under the
-%% conditions of the LaTeX Project Public License, either version 0.1
-%% of this license or (at your option) any later version.
-
 \NeedsTeXFormat{LaTeX2e}[1995/12/01]
 \ProvidesClass{sty/njustthesis}[2023/03/03 v0.1 NJUSTthesis template class]
 
