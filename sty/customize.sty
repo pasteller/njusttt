@@ -1,0 +1,163 @@
+%% This "custom.sty" is the style file for njustThesis template.
+%%
+%% GUN
+%% It may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 0.1
+%% of this license or (at your option) any later version.
+
+\NeedsTeXFormat{LaTeX2e}[1995/12/01]
+\ProvidesPackage{sty/customize}[2023/03/03 v0.1 customized macros package]
+
+
+
+
+% declare options
+\DeclareOption*{\PackageWarning{customize}{Unknown option '\CurrentOption'}}     % handle non-implemented options
+\ProcessOptions\relax     % terminates all options processing
+
+
+
+% language settings
+\usepackage{fontspec}                               % fontspec package
+\defaultfontfeatures{Ligatures=TeX}                 % use tex style to support LaTeX quoting style
+\setmainfont[BoldFont=Times New Roman-Bold, ItalicFont=Times New Roman-Italic]{Times New Roman}         % determine \rmfamily
+
+
+
+% graphics settings
+\usepackage{graphicx}                               % graphics packages for including graphics
+\usepackage[margin=10.5pt, font=small]{caption}     % caption options in tables
+\usepackage[section]{placeins}                      % to prevent floats from being moved over section
+\usepackage{subfigure}                              % subcaptions for subfigures
+\usepackage{subfigmat}                              % matrices of similar subfigures, aka small mulitples
+\usepackage{overpic}
+\usepackage{caption}
+\DeclareCaptionLabelSeparator{none}{ }
+\captionsetup{labelsep=none}
+% \captionsetup{aboveskip=0pt}
+% \captionsetup{belowskip=10pt}                       % narrow the skip between caption and main words 
+\captionsetup[figure]{skip=5pt}
+\captionsetup[table]{skip=5pt}
+
+\setlength\abovedisplayskip{0pt}                    % set display skip between equations and main words
+\setlength\belowdisplayskip{0pt}
+\setlength{\abovecaptionskip}{0pt}
+\setlength{\belowcaptionskip}{-2pt}
+
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}          % available graphic format
+
+
+
+% math 
+\usepackage{amsmath,amssymb,amstext}
+
+
+
+% algorithm
+\usepackage{algorithm}
+\usepackage{algorithmic}
+\floatname{algorithm}{算法}
+\renewcommand{\algorithmicrequire}{\textbf{输入：}}
+\renewcommand{\algorithmicensure}{\textbf{输出：}}
+
+
+% unit
+\usepackage{siunitx}
+\sisetup{number-mode=text}
+\newcommand{\dw}[2]{~\SI{ #1}{#2}}
+\newcommand{\td}[0]{~\~{}~}
+
+
+% reference
+\usepackage[backend=biber, style=numeric, sorting=none, gbpub=false, bibstyle=gb7714-2015, citestyle=gb7714-2015, gbnamefmt=lowercase]{biblatex}
+\addbibresource[location=local]{ref/ch1.bib}
+\addbibresource[location=local]{ref/ch2.bib}
+\addbibresource[location=local]{ref/ch3.bib}
+\addbibresource[location=local]{ref/ch4.bib}
+\addbibresource[location=local]{ref/ch5.bib}
+\addbibresource[location=local]{ref/ch6.bib}
+
+
+% tables
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{tabularx}
+\newcolumntype{C}{>{\centering\arraybackslash}X}
+\renewcommand\arraystretch{1.3}
+\let\oldtabularx\tabularx
+\renewcommand{\tabularx}{\zihao{5}\oldtabularx}
+\usepackage{xcolor,colortbl}
+\usepackage{threeparttable}
+
+
+% enumitem
+\usepackage{enumitem}
+\setenumerate[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=3.0pt}
+\setitemize[1]{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=3.0pt}
+\setdescription{itemsep=0pt,partopsep=0pt,parsep=\parskip,topsep=3.0pt}
+
+
+
+% page layout
+\usepackage{fancyhdr}                               % fancy headers and footers
+
+
+
+% hyperref
+\ifxetex
+    \usepackage[xetex]{hyperref}                    % running xelatex in PDF mode
+\else
+    \ifpdf
+        \usepackage[pdftex]{hyperref}               % running pdfTeX in PDF mode
+    \fi
+\fi
+
+
+
+% hyperlinks
+\hypersetup{
+    pdffitwindow=false,                             % window fit to page when opened
+    pdfstartview={FitH},                            % fits the width of the page to the window
+    colorlinks=true,                                % false: boxed links; true: colored links
+    linkcolor=black,                                % color of internal links
+    citecolor=black,                                % color of links to bibliography
+    filecolor=black,                                % color of file links
+    urlcolor=black                                  % color of external links
+}
+
+
+
+% Toc Style
+\setcounter{tocdepth}{2}                            % specifies what depth to take the Table of Contents to.
+\setcounter{secnumdepth}{3}                         % the depth for section numbering occurs, default is 2(subsub).
+\newtheoremstyle{break}                             % name
+{}                                                  % Space above, empty = `usual value'
+{}                                                  % Space below
+{\itshape}                                          % Body font
+{}                                                  % Indent amount (empty = no indent, \parindent = para indent)
+{\bfseries}                                         % Thm head font
+{.}                                                 % Punctuation after thm head
+{\newline}                                          % Space after thm head: \newline = linebreak
+{}                                                  % Thm head spec
+
+
+
+% set the nomenclature in two columns
+\usepackage{multicol}
+\usepackage{nomencl}
+\makenomenclature
+\renewcommand*\nompreamble{\begin{multicols}{2}}
+        \renewcommand*\nompostamble{\end{multicols}}
+\providecommand{\nomenclatureitem}[3][ ]{           % abbreviations columns
+    \noindent\makebox[0.25\textwidth][l]{#2}{{#3}\hfill{#1}}\par
+}
+
+
+
+% editing tools
+\colorlet{BLUE}{blue}
+\newcommand{\att}[1]{\textcolor{blue}{#1}}
+
+
+
+\endinput
